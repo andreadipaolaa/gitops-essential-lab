@@ -25,17 +25,6 @@ Containerizza PostgreSQL 16 e verifica che i dati restino disponibili dopo la 
 
 ---
 
-## Criteri di valutazione
-
-| Criterio              | Requisito                                                         |
-|-----------------------|-------------------------------------------------------------------|
-| **Avvio container**   | PostgreSQL in ascolto sulla porta 5432                            |
-| **Persistenza**       | I dati restano dopo stop / start con lo stesso volume             |
-| **Pulizia**           | Immagine basata su `postgres:16-alpine`, taglia ≤ 80 MB           |
-| **Documentazione**    | README chiaro su build, run, test                                 |
-
----
-
 ## Struttura attesa
 
 ```
@@ -45,5 +34,4 @@ esercizio‑03/
     ├── Dockerfile
     ├── init/
     │   └── 01_init.sql
-    └── .dockerignore
 ```

@@ -35,14 +35,5 @@ dove:
    Hello, Mario! It is 2025-05-07T14:32:01.123456 UTC.
    ```
 
-### Criteri di valutazione
-| Criterio | Requisito |
-|----------|-----------|
-| **Funzionalità** | Il messaggio stampato rispetta il formato richiesto |
-| **Taglia immagine** | ≤ 50 MB (usa `--no-cache-dir`, Alpine, `.dockerignore`, ecc.) |
-| **Pulizia** | Nessun file inutile nell’immagine (`__pycache__`, ecc.) |
-| **Documentazione** | README chiaro su come costruire ed eseguire l’immagine |
-
-> **Suggerimento**: prova con nomi diversi, senza variabile `NAME`, e controlla il peso finale con `docker images`.
 
 Buon lavoro! :whale:

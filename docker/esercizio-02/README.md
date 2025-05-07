@@ -37,31 +37,6 @@ Hello from Docker! 🐳
 
 ---
 
-## Criteri di valutazione
-
-| Criterio            | Requisito                                                         |
-|---------------------|-------------------------------------------------------------------|
-| **Funzionalità**    | Risposta 200 OK con il contenuto HTML richiesto                   |
-| **Taglia immagine** | ≤ 15 MB (grazie a `nginx:alpine` e a un `.dockerignore` pulito)   |
-| **Semplicità run**  | Un solo comando `docker run -p 8080:80 …`                         |
-| **Documentazione**  | README chiaro su build, run e verifica                            |
-
-> **Extra facoltativo**  
-> Vuoi un messaggio personalizzabile? Usa un `ARG MSG` nel `Dockerfile` e sostituiscilo al build‑time:
-
-```dockerfile
-ARG MSG="Hello from Docker! 🐳"
-RUN echo "${MSG}" > /usr/share/nginx/html/index.html
-```
-
-Build personalizzato:
-
-```bash
-docker build -t static-web --build-arg MSG="Ciao dal container!" .
-```
-
----
-
 ## Struttura attesa
 
 ```
@@ -70,5 +45,4 @@ esercizio‑02/
 └── solution/
     ├── Dockerfile
     ├── index.html
-    └── .dockerignore
 ```
