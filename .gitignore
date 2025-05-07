@@ -40,3 +40,22 @@ terraform.rc
 .terraform_workspace
 # Ignore docker files   
 .dockerignore
+
+# file dei sistemi operativi
+# Windows
+Thumbs.db
+# macOS
+.DS_Store
+# Linux
+*~
+# Ignore IDE specific files
+# JetBrains IDEs
+.idea/
+# Visual Studio Code
+.vscode/
+# Ignore other IDE specific files
+# Eclipse
+.project
+.classpath
+# NetBeans
+nbproject/  
