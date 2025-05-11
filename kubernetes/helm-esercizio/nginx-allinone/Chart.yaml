@@ -1,0 +1,6 @@
+apiVersion: v2
+name: nginx-allinone
+description: Chart dimostrativo che combina ConfigMap, Deployment, Service, HPA e Ingress per Nginx
+type: application
+version: 0.1.0
+appVersion: "1.27-alpine"

@@ -1,0 +1,19 @@
+# 1. Crea Secret, StatefulSet e Service
+kubectl apply -f secret.yaml
+kubectl apply -f statefulset.yaml
+kubectl apply -f service.yaml
+
+# 2. Attendi pod Ready
+kubectl rollout status sts/postgres-sts -n demo
+
+# 3. Inserisci dati di prova
+kubectl run psql-client -n demo --rm -it --image=postgres:16-alpine -- \
+  psql -h postgres-svc -U demo -d demo_db -c \
+  "CREATE TABLE hello(id serial PRIMARY KEY, msg text); INSERT INTO hello(msg) VALUES ('Hello K8s');"
+
+# 4. Simula restart
+kubectl delete pod -l app=postgres-demo -n demo
+
+# 5. Dopo che il nuovo pod è Ready, verifica i dati
+kubectl run psql-client -n demo --rm -it --image=postgres:16-alpine -- \
+  psql -h postgres-svc -U demo -d demo_db -c "SELECT * FROM hello;"
