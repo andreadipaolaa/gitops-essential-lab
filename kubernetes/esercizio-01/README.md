@@ -5,7 +5,10 @@ Primo passo con Kubernetes: crea un **Deployment Nginx** in un namespace dedicat
 ---
 
 ## Obiettivo
-1. Creare un namespace chiamato **`demo`**.    2. Deployare un **Deployment** `nginx-deploy` (1 replica) con immagine `nginx:1.27-alpine`.    3. Esporre il Deployment tramite un **Service** `nginx-svc` (ClusterIP) sulla porta 80.    4. Port‑forward del Service sulla porta **8080** dell’host e test con `curl`.
+1. Creare un namespace chiamato **`demo`**.    
+2. Deployare un **Deployment** `nginx-deploy` (1 replica) con immagine `nginx:1.27-alpine`.    
+3. Esporre il Deployment tramite un **Service** `nginx-svc` (ClusterIP) sulla porta 80.    
+4. Port‑forward del Service sulla porta **8080** dell’host e test con `curl`.
 
 ---
 

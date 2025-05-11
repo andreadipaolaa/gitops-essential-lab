@@ -5,7 +5,12 @@ Gestisci **ConfigMap**, probe di salute e scaling automatico in Kubernetes parte
 ---
 
 ## Obiettivo
-1. Creare una **ConfigMap** `nginx-html` che contenga un file `index.html` personalizzato.    2. Aggiornare/creare un **Deployment** `nginx-deploy` con 2 repliche, montando la ConfigMap come volume in `/usr/share/nginx/html`.    3. Aggiungere **Readiness** e **Liveness** probe HTTP su `/`.    4. Esporre il Deployment tramite **Service** `nginx-svc` (ClusterIP).    5. Port-forward del Service su **8080** e verificare la pagina.    6. Scalare a 4 repliche con `kubectl scale` e verificare che tutti i Pod siano *Running*.
+1. Creare una **ConfigMap** `nginx-html` che contenga un file `index.html` personalizzato.    
+2. Aggiornare/creare un **Deployment** `nginx-deploy` con 2 repliche, montando la ConfigMap come volume in `/usr/share/nginx/html`.    
+3. Aggiungere **Readiness** e **Liveness** probe HTTP su `/`.    
+4. Esporre il Deployment tramite **Service** `nginx-svc` (ClusterIP).    
+5. Port-forward del Service su **8080** e verificare la pagina.    
+6. Scalare a 4 repliche con `kubectl scale` e verificare che tutti i Pod siano *Running*.
 
 ---
 

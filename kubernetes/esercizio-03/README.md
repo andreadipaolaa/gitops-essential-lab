@@ -5,7 +5,12 @@ Impara a deployare un database **stateful** con persistenza dei dati usando **St
 ---
 
 ## Obiettivo
-1. Ri‑usare il namespace `demo`.    2. Creare un **Secret** `pg-secret` con la password del DB.    3. Deployare lo **StatefulSet** `postgres-sts` con immagine `postgres:16-alpine` (1 replica).    4. Richiedere un volume persistente (1 Gi) tramite `volumeClaimTemplates`.    5. Esporre il DB con **Service** `postgres-svc` (ClusterIP, 5432).    6. Inserire un record, distruggere il Pod e verificare che i dati persistano.
+1. Ri‑usare il namespace `demo`.    
+2. Creare un **Secret** `pg-secret` con la password del DB.    
+3. Deployare lo **StatefulSet** `postgres-sts` con immagine `postgres:16-alpine` (1 replica).    
+4. Richiedere un volume persistente (1 Gi) tramite `volumeClaimTemplates`.    
+5. Esporre il DB con **Service** `postgres-svc` (ClusterIP, 5432).    
+6. Inserire un record, distruggere il Pod e verificare che i dati persistano.
 
 ---
 

@@ -5,7 +5,11 @@ Metti insieme autoscaling orizzontale e ingress per esporre un’app stateless s
 ---
 
 ## Obiettivo
-1. Deployment **web-deploy** (2 repliche) con `nginx:1.27-alpine` e *requests* 50 m CPU / 64 Mi RAM.    2. Service **web-svc** (ClusterIP, 80).    3. Ingress **web-ing** host `demo.local` ✚ regola path `/` → `web-svc`.    4. HPA **web-hpa** 2–5 repliche, target 50 % CPU.    5. Genera carico e verifica che le repliche salgano sopra 2, poi tornino a 2 when idle.
+1. Deployment **web-deploy** (2 repliche) con `nginx:1.27-alpine` e *requests* 50 m CPU / 64 Mi RAM.    
+2. Service **web-svc** (ClusterIP, 80).    
+3. Ingress **web-ing** host `demo.local` ✚ regola path `/` → `web-svc`.    
+4. HPA **web-hpa** 2–5 repliche, target 50 % CPU.    
+5. Genera carico e verifica che le repliche salgano sopra 2, poi tornino a 2 when idle.
 
 > Assicurati di avere **metrics‑server** e **NGINX Ingress Controller** installati sul cluster.    > Aggiungi nel tuo `/etc/hosts` la riga: `127.0.0.1  demo.local` (o l’IP del tuo ingress).
 
