@@ -1,0 +1,20 @@
+# Build immagine
+docker build -t pg-demo .
+
+# Crea volume persistente
+docker volume create pgdata_demo
+
+# Avvia il DB
+docker run --rm -d --name pg-demo -p 5432:5432 -v pgdata_demo:/var/lib/postgresql/data pg-demo
+
+# Inserisci dati
+docker exec -it pg-demo psql -U demo -d demo_db -c "INSERT INTO hello(msg) VALUES ('Hello from Docker 📦');"
+
+# Ferma il container
+docker stop pg-demo
+
+# Riavvialo con lo stesso volume
+docker run --rm -d --name pg-demo -p 5432:5432 -v pgdata_demo:/var/lib/postgresql/data pg-demo
+
+# Verifica che la riga esista ancora
+docker exec -it pg-demo psql -U demo -d demo_db -c "SELECT * FROM hello;"
