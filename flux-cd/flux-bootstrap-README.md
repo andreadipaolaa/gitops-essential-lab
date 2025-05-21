@@ -1,4 +1,4 @@
-# Flux CD – Esercizio 1 “Bootstrap & Primer” 🔄✨
+# Flux CD – Bootstrap
 
 Obiettivo  
 1. Installare Flux CD su Minikube.  
