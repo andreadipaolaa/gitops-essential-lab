@@ -1,0 +1,13 @@
+# Applica tutto
+kubectl apply -f . -n demo
+
+# Attendi rollout
+kubectl rollout status deployment/nginx-deploy -n demo
+
+# Port-forward del Service
+kubectl port-forward svc/nginx-svc 8080:80 -n demo &
+curl http://localhost:8080   # dovresti vedere “Hello from Kubernetes – exercise 2”
+
+# Scala a 4 repliche
+kubectl scale deployment nginx-deploy --replicas=4 -n demo
+kubectl get pods -n demo

@@ -1,0 +1,8 @@
+kubectl apply -f . -n demo          # Deployment, Service, Ingress, HPA
+watch kubectl get deploy,svc,ing,hpa,pods -n demo
+
+# Genera carico
+kubectl run -i --tty load --rm --image=busybox -n demo -- /bin/sh -c \
+  "while true; do wget -q -O- http://web-svc; done"
+
+# Osserva l'HPA salire a 3-5 pod, poi ^C carico e verifica che torni a 2

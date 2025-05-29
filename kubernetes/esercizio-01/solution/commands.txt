@@ -1,0 +1,13 @@
+# 1. Namespace + Deployment + Service
+kubectl apply -f namespace.yaml
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+
+# 2. Attendi che la replica sia pronta
+kubectl rollout status deployment/nginx-deploy -n demo
+
+# 3. Port-forward del Service
+kubectl port-forward svc/nginx-svc 8080:80 -n demo &
+
+# 4. Test
+curl http://localhost:8080

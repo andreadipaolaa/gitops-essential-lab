@@ -1,0 +1,23 @@
+replicaCount: 2
+
+image:
+  repository: nginx
+  tag: "1.27-alpine"
+  pullPolicy: IfNotPresent
+
+service:
+  port: 80
+
+html:
+  message: "Hello from Helm 🚀"
+
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  cpu:
+    targetPercentage: 50
+
+ingress:
+  enabled: false
+  host: demo.local
