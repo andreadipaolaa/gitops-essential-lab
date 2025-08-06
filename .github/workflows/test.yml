@@ -5,7 +5,7 @@ on:
 
 jobs:
   test-runner:
-    runs-on: [self-hosted, macos, test]
+    runs-on: self-hosted
     steps:
       - name: Echo dal runner
         run: echo "✅ Ciao dal runner self-hosted!"
