@@ -1,0 +1,11 @@
+name: Test Self-Hosted Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-runner:
+    runs-on: [self-hosted, macos, test]
+    steps:
+      - name: Echo dal runner
+        run: echo "✅ Ciao dal runner self-hosted!"
